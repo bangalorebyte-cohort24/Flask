@@ -3,4 +3,19 @@
 {% block body %}
     <h1>Index Page</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis adipisci cupiditate nesciunt? Reprehenderit, laudantium sapiente fuga dolor deserunt alias quasi?</p>
+
+    {% if state != '' %}
+        {{ state }}
+    {% else %}
+        <p>data not available</p>
+    {% endif %}
+        
+    
+    <ul>
+    {% for item in todolist %}
+        {% if item['completed'] %}
+            <li>{{ item['text'] }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
 {% endblock body%}
